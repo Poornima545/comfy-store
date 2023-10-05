@@ -27,15 +27,15 @@ function FeaturedProducts() {
 
 function Card({ product }) {
   return (
-    <div className="f-col-4 shadow-md" style={{ width: "1rem" }}>
+    <div className="f-col-4 g-col-md-4 card shadow-md" style={{ width: "20%" }}>
       <img
-        src={`${product[0]["attributes"]["image"]}&w=200`}
+        src={`${product["attributes"]["image"]}&w=250`}
         className="card-img-top"
-        alt="..."
+        alt="lamp"
       />
       <div className="card-body">
-        <h5 className="card-name">{product["attributes"]["title"]}</h5>
-        <NavLink to="">{product["attributes"]["price"]}</NavLink>
+        <h3 className="card-name">{product["attributes"]["title"]}</h3>
+        <NavLink to="/productlist" className="card-price">{product["attributes"]["price"]}</NavLink>
       </div>
     </div>
   );

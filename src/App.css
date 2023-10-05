@@ -170,3 +170,20 @@ a:hover {
   letter-spacing: 1px;
   margin: 4rem 0 0 4rem;
 }
+
+.card-name{
+  font-weight: bold;
+  color: rgb(57 78 106) ;
+}
+
+a.card-price{
+  text-decoration: none;
+  color: gray;
+}
+
+.grid {
+display:flex ;
+justify-content:space-around;
+}
+
+
