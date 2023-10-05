@@ -1,0 +1,172 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  display: flex;
+  gap: 1rem;
+  background-color: black;
+  justify-content: end;
+  padding: 1rem;
+  padding-right: 6rem;
+}
+
+.header a {
+  text-decoration: none;
+  color: #fff;
+}
+
+a.active {
+  padding: 10px;
+  color: #fff;
+}
+
+.main {
+  display: flex;
+  gap: 2rem;
+  background-color: rgb(240 246 255);
+  justify-content: center;
+  padding: 1.5rem;
+  font-size: 1rem;
+}
+
+.main a {
+  text-decoration: none;
+  color: gray;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: black;
+  padding: 10px;
+}
+
+.login-form {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  margin: 100px auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  font-size: 20px;
+  line-height: 3rem;
+}
+.login-button {
+  padding: 0 5.7rem;
+  margin-top: 30px;
+  background-color: blue;
+  border-color: blue;
+  color: white;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.register-form {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  margin: 100px auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  font-size: 20px;
+  line-height: 3rem;
+}
+
+.register-button {
+  padding: 0 5rem;
+  margin-top: 30px;
+  background-color: blue;
+  border-color: blue;
+  color: white;
+}
+
+.cards-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 50px;
+}
+
+.card-list {
+  text-align: center;
+  background-color: rgb(191, 173, 239);
+  padding: 2rem;
+}
+
+.start-quizz {
+  background-color: blue;
+  border-radius: 1rem;
+  color: #fff;
+  border-color: blue;
+  padding: 0.5rem 3rem;
+  font-size: 20px;
+}
+
+.cart {
+  margin: 4rem;
+}
+
+.about {
+  margin: 5rem;
+}
+
+.love {
+  font-weight: 700;
+  font-size: 3.25rem;
+  text-align: center;
+}
+
+.comfy {
+  border: 1px solid;
+  background-color: #057aff;
+  color: #fff;
+  padding: 10px;
+  border-radius: 1rem;
+  font-size: 3.25rem;
+}
+
+.para {
+  letter-spacing: 2px;
+  margin-top: 3rem;
+  font-size: 1.125rem;
+  max-width: 50rem;
+  flex-wrap: nowrap;
+  margin-left: 18rem;
+  line-height: 2rem;
+}
+
+.hdr {
+  color: rgb(57 78 106);
+  font-weight: bold;
+  font-size: 4.25rem;
+}
+
+.content {
+  max-width: 60%;
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 4rem;
+}
+
+.content-para {
+  font-size: 1.125rem;
+  line-height: 2rem;
+  margin-top: 2rem;
+  max-width: 75%;
+}
+
+.content-img a {
+  color: white;
+  text-decoration: none;
+}
+
+.featured-products {
+  font-weight: bold;
+  color: rgb(57 78 106);
+  letter-spacing: 1px;
+  margin: 4rem 0 0 4rem;
+}
