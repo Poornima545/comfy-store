@@ -6,7 +6,9 @@ import Register from "./components/navigate/Register";
 import Main from "./components/homepage/Main";
 import About from "./components/navigate/About";
 import Cart from "./components/navigate/Cart";
-import ProductDetails from "./components/products/ProductDetails";
+// import ProductDetails from "./components/products/ProductDetails";
+import AllProducts from "./components/products/AllProducts";
+import ProductFilter from "./components/products/ProductFilter";
 
 function App() {
   return (
@@ -19,7 +21,9 @@ function App() {
           <Route path="/main" element={<Main />} />
           <Route path="/about" element={<About />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/productdetais" element={<ProductDetails/>}/>
+          {/* <Route path="/allproducts/:id" element={<ProductDetails />} /> */}
+          <Route path="/allproducts" element={<AllProducts />} />
+          <Route path="/product" element={<ProductFilter />} />
         </Routes>
       </BrowserRouter>
     </div>

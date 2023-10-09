@@ -35,7 +35,9 @@ function Card({ product }) {
       />
       <div className="card-body">
         <h3 className="card-name">{product["attributes"]["title"]}</h3>
-        <NavLink to="/productlist" className="card-price">{product["attributes"]["price"]}</NavLink>
+        <NavLink to="/productdetails" className="card-price">
+          {product["attributes"]["price"]}
+        </NavLink>
       </div>
     </div>
   );

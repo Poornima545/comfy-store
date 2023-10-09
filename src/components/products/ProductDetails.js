@@ -1,45 +1,52 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-const url =
-  "https://strapi-store-server.onrender.com/api/products?featured=true";
+const productOpt = {
+  options: [1, 2, 3, 4, 5],
+};
 
-function  ProductDetails() {
-  const [productList, setProductList] = useState([]);
+function ProductDetails() {
+  const [productDetail, setProductDetail] = useState(null);
+  const { id } = useParams;
 
   useEffect(() => {
-    axios.get(url).then((res) => setProductList(res.data.data));
-  }, []);
+    axios
+      .get(`https://strapi-store-server.onrender.com/api/products/${id}`)
+      .then((res) => setProductDetail(res.data.data));
+  }, [id]);
+
+  const [options] = useState(productOpt.options);
 
   return (
-    <div>
-      {productList.length > 0 && (
-        <div className="text-center">
-          {productList.map((productlist) => (
-            <Card productlist={productlist} key={productlist.id} />
-          ))}
+    <>
+      {productDetail && (
+        <div className="productdetail">
+          <img src={productDetail.attributes.image} alt="lamp" />
+          <div className="product-para">
+            <h2>{productDetail.attributes.title}</h2>
+            <h4>{productDetail.attributes.company}</h4>
+            <span>{productDetail.attributes.price}</span>
+            <p>{productDetail.attributes.description}</p>
+            <div>
+              <label>colors</label>
+              {productDetail.attributes.colors.map((color) => (
+                <input type="color" key={color} value={color} />
+              ))}
+            </div>
+            <div>
+              <label>Amount</label> <br />
+              <select id="company">
+                {options.map((value) => (
+                  <option value={value}>{value}</option>
+                ))}
+              </select>
+            </div>
+            <button> Add To Bag</button>
+          </div>
         </div>
       )}
-    </div>
-  );
-}
-
-function Card({ productlist }) {
-  return (
-    <div className="f-col-4 g-col-md-4 shadow-md" style={{ width: "18rem" }}>
-      <img
-        src={`${productlist["attributes"]["image"]}&w=200`}
-        className="card-img-top"
-        alt="lamp"
-      />
-      <div className="card-body">
-        <h1 className="card-name">{productlist["attributes"]["title"]}</h1>
-        <h4 className="card-company">{productlist["attributes"]["company"]}</h4>
-        <NavLink to="/featuredproducts" className="price">{productlist["attributes"]["price"]}</NavLink>
-        <p className="card-para">{productlist["attributes"]["description"]}</p>
-      </div>
-    </div>
+    </>
   );
 }
 

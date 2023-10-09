@@ -186,4 +186,14 @@ display:flex ;
 justify-content:space-around;
 }
 
+.product-fill{
+  border: 1px solid;
+  margin-top: 5rem;
+}
+
+.seach{
+  background-color: #007aff;
+}
+
+
 
