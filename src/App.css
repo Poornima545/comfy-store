@@ -171,29 +171,54 @@ a:hover {
   margin: 4rem 0 0 4rem;
 }
 
-.card-name{
+.card-name {
   font-weight: bold;
-  color: rgb(57 78 106) ;
+  color: rgb(57 78 106);
 }
 
-a.card-price{
+a.card-price {
   text-decoration: none;
   color: gray;
 }
 
 .grid {
-display:flex ;
-justify-content:space-around;
+  display: flex;
+  justify-content: space-around;
 }
 
-.product-fill{
-  border: 1px solid;
-  margin-top: 5rem;
+.product-fill {
+  background-color: rgb(240 246 255);
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
 }
 
-.seach{
+.search {
   background-color: #007aff;
+  border: none;
+  padding: 0.3rem 7rem;
+  color: white;
+  text-transform: uppercase;
+  border-radius: 6px;
 }
 
+.reset {
+  background-color: purple;
+  border: none;
+  padding: 0.3rem 7rem;
+  margin-left: 3rem;
+  color: white;
+  text-transform: uppercase;
+  border-radius: 6px;
+}
 
+.product{
+  padding: 0.3rem 6rem;
+  margin-left: 1rem;
+  border-radius: 5px;
+}
 
+.label{
+  padding:0.3rem 6rem;
+  margin-left: 1rem;
+}

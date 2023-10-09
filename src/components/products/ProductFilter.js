@@ -17,8 +17,8 @@ function ProductFilter() {
     "Comfora",
     "Homestead",
   ]);
-  const [sortBy, setSortBy] = useState(["all", "a-z", "z-a", "high", "low"]);
-  const [priceRange, setPriceRange] = useState();
+  const [sort, setSort] = useState(["all", "a-z", "z-a", "high", "low"]);
+  const [priceRange, setPriceRange] = useState([`$1000.00`]);
   const [freeShipping, setFreeShipping] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [form, setForm] = useState({
@@ -26,7 +26,7 @@ function ProductFilter() {
     company: "",
     sortby: "",
     range: "",
-    freeshipping: "",
+    freeshipping: false,
     searchquery: "",
   });
 
@@ -34,7 +34,7 @@ function ProductFilter() {
     const { name, type, value, checked } = e && e.target;
     setForm((prev) => ({
       ...prev,
-      [name]: type == "checkbox" || type == "radio" ? checked : value,
+      [name]: type === "checkbox" || type === "radio" ? checked : value,
     }));
   };
 
@@ -66,8 +66,8 @@ function ProductFilter() {
   const handleReset = () => {
     setCategory("");
     setCompany("");
-    setSortBy("");
-    setPriceRange(1000);
+    setSort("");
+    setPriceRange("");
     setFreeShipping(false);
     setSearchQuery("");
   };
@@ -76,19 +76,17 @@ function ProductFilter() {
     <>
       <div className="product-fill">
         <form onSubmit={handleSubmit}>
-          <label>
+          <label className="label">
             Search Product
-            <input
-              type="searchproduct"
-              name="searchproduct"
-              onChange={handleChange}
-              value={form.searchproduct}
-            />
+            <br />
+            <input type="searchproduct" onChange={handleChange} />
           </label>
-          <label>
+          <label className="label">
             Select Category
+            <br />
             <select
               name="category"
+              className="product"
               value={form.category}
               onChange={handleChange}
             >
@@ -97,36 +95,45 @@ function ProductFilter() {
               ))}
             </select>
           </label>
-          <label>
+          <label className="label">
             Select company
-            <select name="company" value={form.company} onChange={handleChange}>
+            <br />
+            <select
+              name="company"
+              className="product"
+              value={form.company}
+              onChange={handleChange}
+            >
               {company.map((categories) => (
                 <option>{categories}</option>
               ))}
             </select>
           </label>
-          <label>
+          <label className="label">
             Sort By
+            <br />
             <select
               name="sortby"
-              value={sortBy}
+              className="product"
+              value={form.sortby}
               onChange={handleChange}
             ></select>
-            {sortBy.map((categories) => (
+            {sort.map((categories) => (
               <option>{categories}</option>
             ))}
           </label>
-          <label>
+          <label className="label">
             Select Price
             <input
               type="range"
-              name="pricerange"
+              name="range"
+              className="product"
               value={form.priceRange}
               onChange={handleChange}
             />
           </label>
           <label>
-            Free Shipping
+            Free Shipping <br />
             <input
               type="checkbox"
               name="freeshipping"
