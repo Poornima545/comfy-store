@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
-import Main from "./Main";
-import Content from "../homecontent.js/Content";
+import Main from "./Navbar";
+import Home from "../homepage/Home";
 
 function Header() {
   return (
@@ -14,7 +14,7 @@ function Header() {
         </div>
       </div>
       <Main />
-      <Content />
+      <Home />
     </>
   );
 }

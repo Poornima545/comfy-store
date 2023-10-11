@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import FeaturedProducts from "./ProductImage.js/FeaturedProducts";
+import FeaturedProducts from "../homepage/FeaturedProducts";
 
 function Content() {
   return (

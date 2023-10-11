@@ -76,17 +76,18 @@ function ProductFilter() {
     <>
       <div className="product-fill">
         <form onSubmit={handleSubmit}>
-          <label className="label">
+          <section className="fill">
+          <label>
             Search Product
             <br />
             <input type="searchproduct" onChange={handleChange} />
           </label>
-          <label className="label">
+          <label>
             Select Category
             <br />
             <select
               name="category"
-              className="product"
+              className="category"
               value={form.category}
               onChange={handleChange}
             >
@@ -95,12 +96,12 @@ function ProductFilter() {
               ))}
             </select>
           </label>
-          <label className="label">
+          <label>
             Select company
             <br />
             <select
               name="company"
-              className="product"
+              className="company"
               value={form.company}
               onChange={handleChange}
             >
@@ -109,12 +110,12 @@ function ProductFilter() {
               ))}
             </select>
           </label>
-          <label className="label">
+          <label>
             Sort By
             <br />
             <select
               name="sortby"
-              className="product"
+              className="sort"
               value={form.sortby}
               onChange={handleChange}
             ></select>
@@ -122,12 +123,14 @@ function ProductFilter() {
               <option>{categories}</option>
             ))}
           </label>
-          <label className="label">
-            Select Price
+          </section>
+          <div className="range">
+             <label>
+            Select Price<br/>
             <input
               type="range"
               name="range"
-              className="product"
+              className="price"
               value={form.priceRange}
               onChange={handleChange}
             />
@@ -148,8 +151,11 @@ function ProductFilter() {
           <button onClick={handleReset} className="reset">
             Reset
           </button>
+          </div>
         </form>
-      </div>
+        </div>
+        <span className="spn">22 Products</span>
+        <hr/>
     </>
   );
 }

@@ -1,14 +1,11 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from "./components/homepage/Header";
-import Login from "./components/navigate/Login";
-import Register from "./components/navigate/Register";
-import Main from "./components/homepage/Main";
-import About from "./components/navigate/About";
-import Cart from "./components/navigate/Cart";
-// import ProductDetails from "./components/products/ProductDetails";
-import AllProducts from "./components/products/AllProducts";
-import ProductFilter from "./components/products/ProductFilter";
+import Header from "./components/navigate/Header";
+import Login from './components/login/Login';
+import Register from "./components/register/Register";
+import About from "./components/about/About";
+import Cart from "./components/cart/Cart";
+import Navbar from "./components/navigate/Navbar";
 
 function App() {
   return (
@@ -18,12 +15,9 @@ function App() {
           <Route path="/" element={<Header />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/main" element={<Main />} />
+          <Route path="/navbar" element={<Navbar />} />
           <Route path="/about" element={<About />} />
           <Route path="/cart" element={<Cart />} />
-          {/* <Route path="/allproducts/:id" element={<ProductDetails />} /> */}
-          <Route path="/allproducts" element={<AllProducts />} />
-          <Route path="/product" element={<ProductFilter />} />
         </Routes>
       </BrowserRouter>
     </div>

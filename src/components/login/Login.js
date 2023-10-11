@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
+
 function Login() {
   const [login, setLogin] = useState({ userName: "", password: "" });
 
@@ -41,6 +42,8 @@ function Login() {
           Login
         </button>
         <br />
+        <button type="button" className="guest-user">Guest user</button>
+        <br/>
         <span>
           Not a Numberb yet?<Link to="/register">Register</Link>
         </span>

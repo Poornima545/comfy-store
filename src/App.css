@@ -20,27 +20,36 @@ body {
   color: #fff;
 }
 
-a.active {
-  padding: 10px;
-  color: #fff;
+.navbar {
+  background-color: rgb(240 246 255);
 }
 
-.main {
+#navicon {
+  background-color: #007aff;
+  font-size: 2rem;
+  border: 1px solid;
+  color: white;
+  border-radius: 10px;
+  padding: 5px 15px;
+  text-decoration: none;
+  margin-left: 5rem;
+}
+
+.nav {
   display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
-  background-color: rgb(240 246 255);
   justify-content: center;
-  padding: 1.5rem;
+  padding: 1rem;
   font-size: 1rem;
 }
 
-.main a {
+.nav a {
   text-decoration: none;
   color: gray;
-  border: 1px solid black;
-  border-radius: 10px;
   background-color: black;
   padding: 10px;
+  border-radius: 5px;
 }
 
 .login-form {
@@ -53,12 +62,45 @@ a.active {
   font-size: 20px;
   line-height: 3rem;
 }
+
+.moon-icon{
+  display: flex;
+  gap:1rem;
+  margin-right: 5rem;
+  font-size: 2rem;
+}
+
+.moon-icon a{
+  color: black;
+}
+
+.moon-icon > button{
+border: none;
+background-color: rgb(240 246 255);
+}
+
+.grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
 .login-button {
-  padding: 0 5.7rem;
+  padding: 0 8rem;
   margin-top: 30px;
   background-color: blue;
-  border-color: blue;
+  border: none;
   color: white;
+  text-transform: uppercase;
+}
+
+.guest-user {
+  padding: 0 5.7rem;
+  margin-top: 30px;
+  background-color: rgb(70 58 161);
+  border: none;
+  color: white;
+  text-transform: uppercase;
 }
 
 a:hover {
@@ -181,22 +223,18 @@ a.card-price {
   color: gray;
 }
 
-.grid {
-  display: flex;
-  justify-content: space-around;
-}
 
 .product-fill {
   background-color: rgb(240 246 255);
-    padding: 10px;
-    border-radius: 5px;
-    margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 3rem;
 }
 
 .search {
   background-color: #007aff;
   border: none;
-  padding: 0.3rem 7rem;
+  padding: 0.2rem 8rem;
   color: white;
   text-transform: uppercase;
   border-radius: 6px;
@@ -212,13 +250,26 @@ a.card-price {
   border-radius: 6px;
 }
 
-.product{
-  padding: 0.3rem 6rem;
-  margin-left: 1rem;
-  border-radius: 5px;
+.fill,
+.range {
+  display: flex;
+  justify-content: space-around;
+  margin: 2rem 1rem;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
-.label{
-  padding:0.3rem 6rem;
-  margin-left: 1rem;
+.company,
+.category,
+.sort {
+  width: 12rem;
+  height: 1.9rem;
+  border-radius: 6px;
+  margin: 5px;
+  border: 1px solid;
+  padding: 1rem 6rem;
+}
+
+.spn {
+  margin: 3.5rem;
 }
