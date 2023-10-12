@@ -63,20 +63,20 @@ body {
   line-height: 3rem;
 }
 
-.moon-icon{
+.moon-icon {
   display: flex;
-  gap:1rem;
+  gap: 1rem;
   margin-right: 5rem;
   font-size: 2rem;
 }
 
-.moon-icon a{
+.moon-icon a {
   color: black;
 }
 
-.moon-icon > button{
-border: none;
-background-color: rgb(240 246 255);
+.moon-icon > button {
+  border: none;
+  background-color: rgb(240 246 255);
 }
 
 .grid {
@@ -124,19 +124,6 @@ a:hover {
   background-color: blue;
   border-color: blue;
   color: white;
-}
-
-.cards-list {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 50px;
-}
-
-.card-list {
-  text-align: center;
-  background-color: rgb(191, 173, 239);
-  padding: 2rem;
 }
 
 .start-quizz {
@@ -223,7 +210,6 @@ a.card-price {
   color: gray;
 }
 
-
 .product-fill {
   background-color: rgb(240 246 255);
   padding: 10px;
@@ -231,10 +217,29 @@ a.card-price {
   margin: 3rem;
 }
 
+.card-title {
+  text-transform: capitalize;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.btn-primary {
+  background-color: white;
+  border: none;
+  color: black;
+}
+
+.product-form {
+  background-color: rgb(240 246 255);
+  margin: 3rem;
+  border-radius: 5px;
+  padding: 2rem;
+}
+
 .search {
   background-color: #007aff;
   border: none;
-  padding: 0.2rem 8rem;
+  padding: 0 10rem;
   color: white;
   text-transform: uppercase;
   border-radius: 6px;
@@ -243,33 +248,55 @@ a.card-price {
 .reset {
   background-color: purple;
   border: none;
-  padding: 0.3rem 7rem;
+  padding: 0 10rem;
   margin-left: 3rem;
   color: white;
   text-transform: uppercase;
   border-radius: 6px;
 }
 
-.fill,
+.choice,
 .range {
   display: flex;
   justify-content: space-around;
-  margin: 2rem 1rem;
-  gap: 15px;
+  gap: 10px;
   flex-wrap: wrap;
+}
+
+.range {
+  margin-top: 3rem;
 }
 
 .company,
 .category,
-.sort {
-  width: 12rem;
-  height: 1.9rem;
+.sort,
+.searchproduct {
+  width: 18rem;
+  height: 2rem;
   border-radius: 6px;
   margin: 5px;
   border: 1px solid;
-  padding: 1rem 6rem;
+  border-color: gainsboro;
 }
 
-.spn {
-  margin: 3.5rem;
+.check {
+  width: 6rem;
 }
+
+.product-list {
+  display: flex;
+  margin: 0 3rem;
+}
+
+.grid-view > button {
+  border: none;
+  background-color: white;
+}
+
+.card p {
+  text-transform: capitalize;
+  color: rgb(57 78 106);
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+

@@ -1,11 +1,11 @@
-import ProductDetails from "./ProductDetails";
-import ProductFilter from "./ProductFilter";
+import ProductForm from "./ProductForm";
+import ProductsList from "./ProductList";
 
 function AllProducts() {
   return (
     <>
-      {/* <ProductDetails /> */}
-      <ProductFilter />
+      <ProductForm />
+      <ProductsList/>
     </>
   );
 }

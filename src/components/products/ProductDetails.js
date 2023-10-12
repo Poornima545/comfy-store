@@ -2,47 +2,46 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-const productOpt = {
-  options: [1, 2, 3, 4, 5],
-};
-
 function ProductDetails() {
-  const [productDetail, setProductDetail] = useState(null);
+  const [productDetails, setProductDetails] = useState();
+  const [count, setCount] = useState(1);
   const { id } = useParams;
 
   useEffect(() => {
     axios
       .get(`https://strapi-store-server.onrender.com/api/products/${id}`)
-      .then((res) => setProductDetail(res.data.data));
+      .then((res) => setProductDetails(res.data.data));
   }, [id]);
-
-  const [options] = useState(productOpt.options);
 
   return (
     <>
-      {productDetail && (
+      {productDetails && (
         <div className="productdetail">
-          <img src={productDetail.attributes.image} alt="lamp" />
+          <img src={productDetails["attributes"]["image"]} alt="lamp" />
           <div className="product-para">
-            <h2>{productDetail.attributes.title}</h2>
-            <h4>{productDetail.attributes.company}</h4>
-            <span>{productDetail.attributes.price}</span>
-            <p>{productDetail.attributes.description}</p>
+            <h2>{productDetails["attributes"]["title"]}</h2>
+            <h4>{productDetails["attributes"]["company"]}</h4>
+            <span>{productDetails["attributes"]["price"]}</span>
+            <p>{productDetails["attributes"]["description"]}</p>
             <div>
               <label>colors</label>
-              {productDetail.attributes.colors.map((color) => (
-                <input type="color" key={color} value={color} />
+              {productDetails["attributes"]["colors"].map((color) => (
+                <input type="color" key={color} value={color} disabled />
               ))}
             </div>
-            <div>
-              <label>Amount</label> <br />
-              <select id="company">
-                {options.map((value) => (
-                  <option value={value}>{value}</option>
-                ))}
-              </select>
-            </div>
-            <button> Add To Bag</button>
+            <br />
+            <select
+              name="count"
+              value={count}
+              onChange={(e) => setCount(e.target.value)}
+            >
+              {[1, 2, 3, 4, 5].map((item) => (
+                <option key={item}>{item}</option>
+              ))}
+            </select>
+            <button type="button"> 
+              Add To Cart
+            </button>
           </div>
         </div>
       )}

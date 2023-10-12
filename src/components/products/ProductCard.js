@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function ProductFilter(props) {
+function ProductCard(props) {
   const { product } = props;
   return (
     <Link to={`/products/${product.id}`}>
@@ -24,4 +24,4 @@ function ProductFilter(props) {
   );
 }
 
-export default ProductFilter;
+export default ProductCard;

@@ -1,27 +1,47 @@
+import axios from "axios";
 import { useState } from "react";
-import { Link } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
 
 function Login() {
   const [login, setLogin] = useState({ userName: "", password: "" });
+  const navigate = useNavigate();
 
-  const handleChange = (ev) => {
-    const { name, value } = ev && ev.target;
+  const handleChange = (e) => {
+    const { name, value } = e && e.target;
     setLogin((prev) => ({ ...prev, [name]: value }));
   };
 
-  function handleSubmit(event) {
-    event.preventDefault();
+  function handleSubmit(e) {
+    e.preventDefault();
     console.log(login);
-    setLogin({ userName: "", password: "" });
+    if (login.email.length && login.password.length){
+      doLogin({...login});
+    }
+  }
+
+  const doLogin = ({email, password}) => {
+    axios.post('https://strapi-store-server.onrender.com/api/auth/local',{
+      idetifier: email,
+      password:password
+    })
+    .then((res) => {
+      setLogin({email:"", password:""})
+      localStorage.setItem("user", JSON.stringify(res.data))
+      navigate("/")
+    })
+  }
+
+  const handleGuestLogin = () => {
+    doLogin({email: "poo@gmqil.com", password:"poornima"})
   }
 
   return (
     <div className="login-form">
+      <h1>Login</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="username">UserName</label>
         <br />
-        <input
+        <input type="userName"
           name="userName"
           placeholder="Enter your userName"
           value={login.userName}
@@ -42,7 +62,7 @@ function Login() {
           Login
         </button>
         <br />
-        <button type="button" className="guest-user">Guest user</button>
+        <button type="button" className="guest-user" onClick={handleGuestLogin}>Guest user</button>
         <br/>
         <span>
           Not a Numberb yet?<Link to="/register">Register</Link>

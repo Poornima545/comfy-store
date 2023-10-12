@@ -6,6 +6,10 @@ import Register from "./components/register/Register";
 import About from "./components/about/About";
 import Cart from "./components/cart/Cart";
 import Navbar from "./components/navigate/Navbar";
+// import Products from "./components/products/Products";
+import ProductDetails from "./components/products/ProductDetails";
+import ProductCard from "./components/products/ProductCard";
+import AllProducts from "./components/products/AllProducts";
 
 function App() {
   return (
@@ -18,6 +22,10 @@ function App() {
           <Route path="/navbar" element={<Navbar />} />
           <Route path="/about" element={<About />} />
           <Route path="/cart" element={<Cart />} />
+          {/* <Route path="/products" element={<Products />} /> */}
+          <Route path="/products/:id" element={<ProductDetails/>} />
+          <Route path="/productCard" element={<ProductCard/>} />
+          <Route path="/products" element={<AllProducts/>} />
         </Routes>
       </BrowserRouter>
     </div>
