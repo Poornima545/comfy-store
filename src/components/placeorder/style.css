@@ -1,0 +1,17 @@
+.place-order {
+    margin: 5rem;
+ }
+
+.place-order h1{
+   text-transform: capitalize; 
+ }
+
+ .form-control{
+    margin-bottom: 30px;
+ }
+
+.flex-grow-1{
+    background-color: blueviolet;
+    color: white;
+    
+}

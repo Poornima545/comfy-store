@@ -1,47 +1,23 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { Link } from "react-router-dom";
-import {BsFillGrid1X2Fill, BsList} from "react-icons/bs"
+import ProductCard from "./ProductCard";
+import './style.css';
 
-
-function ProductsList() {
-  const [productsList, setProductsList] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("https://strapi-store-server.onrender.com/api/products")
-      .then((res) => setProductsList(res.data.data));
-  }, []);
-
+ function ProductList(props) {
+  const { products } = props;
   return (
     <>
-    <div className="product-list">
-        <div className="grid-list">
-        <h3>{productsList.length} Products</h3>
-        </div>
-        <div className="grid-view">
-          <button onClick="gridView()" style={{backgroundColor:"blue", color:"white", borderRadius:"50px", padding:"10PX"}}><BsFillGrid1X2Fill/></button>
-          <button onClick="listView()" style={{fontSize:"30px"}}><BsList/></button>
-          </div>
-        </div>
-        <hr/>
+      <h5>{products.length} Products</h5>
+      <hr />
       <div>
-        {productsList.map((product) => (
-                  <Link to={"/productdetails" + product.id} style={{textDecoration:"none"}}>
-                    <div className="g-col-4 g-col-md-4 card shadow-md"style={{ width: "18rem"}}>
-                    <img
-                      src={product["attributes"]["image"]}
-                      alt="lamp"
-                      className="card-img-top" 
-                    />
-                    <p style={{marginTop:"10px"}}>{product["attributes"]["title"]}</p>
-                    <span>{product["attributes"]["price"]}</span>
-                    </div>
-                  </Link>
-        ))}
-        </div>
-  </>
-  )
+        {products.length > 0 && (
+          <div className="grid d-flex gap-3 flex-wrap text-center">
+            {products.map((product) => (
+              <ProductCard product={product} key={product.id} />
+            ))}
+          </div>
+        )}
+      </div>
+    </>
+  );
 }
 
-export default ProductsList;
+export default ProductList;

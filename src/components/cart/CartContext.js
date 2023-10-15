@@ -3,10 +3,9 @@ import { createContext, useReducer } from "react";
 const CartContext = createContext();
 CartContext.displayName = "CartContext";
 
-const initialState = { items: [], totalCount: 1 };
+const initialState = { items: [], totalCount: 0 };
 
 function cartReducer(state, payload) {
-
   const { action, value } = payload;
   switch (action) {
     case "ADD_ITEM_CART":
@@ -15,6 +14,20 @@ function cartReducer(state, payload) {
         items: [...state.items, value],
         totalCount: state.totalCount + +value.count,
       };
+    case "REMOVE_ITEM_CART": {
+      let itemFound;
+      return {
+        ...state,
+        items: state.items.filter((item) => {
+          if (item.id === value.id) {
+            itemFound = item;
+            return false;
+          }
+          return true;
+        }),
+        totalCount: state.totalCount - itemFound.count,
+      };
+    }
     case "UPDATE_ITEM_CART": {
       let prevItemState;
       return {
@@ -29,7 +42,7 @@ function cartReducer(state, payload) {
         totalCount: state.totalCount + +value.count - prevItemState.count,
       };
     }
-    case "CLEAR_ITEM_CART":
+    case "CLEAR_CART":
       return initialState;
     default:
       return state;
@@ -38,6 +51,7 @@ function cartReducer(state, payload) {
 
 const CartContextProvider = (props) => {
   const [state, dispatch] = useReducer(cartReducer, initialState);
+
 
   return (
     <CartContext.Provider value={{ state, dispatch }}>

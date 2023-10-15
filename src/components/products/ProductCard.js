@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import './style.css';
 
 function ProductCard(props) {
   const { product } = props;
@@ -11,7 +12,7 @@ function ProductCard(props) {
         <img
           src={`${product["attributes"]["image"]}&w=200`}
           className="card-img-top"
-          alt="..."
+          alt="lazy"
         />
         <div className="card-body">
           <h5 className="card-title">{product["attributes"]["title"]}</h5>

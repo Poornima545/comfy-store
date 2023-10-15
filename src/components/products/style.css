@@ -1,0 +1,27 @@
+.flex-grow-1, h1{
+    text-transform: capitalize;
+}
+
+#select-items{
+    margin-left: 1rem;
+    padding: 4px 5rem;
+    border-color:rgb(70 58 161) ;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+
+}
+
+.add-to-cart{
+    background-color:rgb(70 58 161);
+    color: white;
+    text-transform: uppercase;
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: none;
+}
+
+.select-items{
+    font-weight: bold;
+}
+
+

@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
-import { BsFillMoonFill } from "react-icons/bs";
-import { BsFillCartDashFill } from "react-icons/bs";
+import { BsFillMoonFill, BsFillCartDashFill  } from "react-icons/bs";
+
 
 function Navbar() {
   const className = ({ isActive }) => (isActive ? "active" : "");
@@ -23,14 +23,13 @@ function Navbar() {
       <NavLink className={className} to="/cart">
         Cart
       </NavLink>
+      <NavLink className={className} to="/orders">
+        Orders
+      </NavLink>
       </div>
       <div className="moon-icon">
-        <button>
           <BsFillMoonFill />
-        </button>
-        <Link href="#">
           <BsFillCartDashFill />
-        </Link>
       </div>
     </nav>
   );

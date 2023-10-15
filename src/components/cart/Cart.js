@@ -1,8 +1,8 @@
 import { useContext, useState } from "react";
-import { CartContext } from "CartContext";
+import { CartContext } from './CartContext';
 import { useNavigate } from "react-router-dom";
 
-export default function Cart() {
+ function Cart() {
   const { state, dispatch } = useContext(CartContext);
   const [count, setCount] = useState(1);
   const navigate = useNavigate();
@@ -21,7 +21,7 @@ export default function Cart() {
   };
 
   const handleCheckOut = () => {
-    navigate("/order");
+    navigate("/orders");
   };
 
   return (
@@ -51,3 +51,5 @@ export default function Cart() {
     </div>
   );
 }
+
+export default Cart;
